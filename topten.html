@@ -12,8 +12,19 @@
       <article class="item-b">
         Main area
         <div id="userInput">
+          <input type="text" name="selection_1" placeholder="First item">
+        </div>
+        <div id="add_userInput">
+          <!--Add jQuery Event to innerHTML + text input(name="selection_" + count of #userInput inputs + 1) -->
+          <button type="button" name="add_selection">Add a Selection</button>
+          <!--jQuery Event to add all the fields to an array... 2D array? Indeces must be able to store whoever
+           they beat to ensure "second-favorites" don't get eliminated versus "favorites"-->
+          <button type="button" name="submit_selection">Submit Selections</button>
         </div>
         <div id="userStage">
+          <!--Present two cards at a time, let user pick favorite, modify array and refresh. Maybe
+          load up random transparent images in the card backgrounds, of opposing things; vampires vs werewolves, mustard vs
+          ketchup, etc. Once choices are organized/narrowed down to 10, refresh stage to present results-->
         </div>
       </article>
       <aside class="item-c">
