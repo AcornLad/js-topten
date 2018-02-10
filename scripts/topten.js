@@ -1,6 +1,8 @@
 $(document).ready(function(){
+    var entries = {};
+    var list = [];
     var count_userInput = 2;
-    $(name='#add_selection').click(function(){
+    $('#add_selection').click(function(){
         console.log("add_userInput clicked");
         $("form").append("<input type=\"text\" class=\"userInputItem\" name=\"Selection_" + count_userInput + "\" placeholder=\"Item " + count_userInput +"\">");
         count_userInput++;
@@ -17,12 +19,26 @@ $(document).ready(function(){
     */
     $(name='#submit_input').click(function(){
         console.log("submit_userInput clicked");
-        $(function(){
-            var map = {};
+        $(function(){  
             $(".userInputItem").each(function(){
-                map[$(this).attr("name")] = $(this).val();
+                //entries[$(this).attr("name")] = $(this).val();
+                list.push({name: [$(this).attr("name")], killedBy: "nothing"});
             });
-            console.log(map.Selection_3); //Testing purposes. Remove later.
+            //console.log(entries.Selection_3); //Testing purposes. Remove later.
+            //vvv Also for testing purposes vvv
+            $.each(list, function(){
+                console.log("List item");
+                console.log(this.name);
+                console.log(this.killedBy);
+            });
+            
+            $("#userStage").append("<p>Test</p>");
+            //Now, append two big buttons with the display name as the list item names. When clicked, begin business logic
         });
     });
+    
+    
+    
+    
+    
 });
